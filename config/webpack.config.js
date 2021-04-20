@@ -86,45 +86,27 @@ module.exports = function (webpackEnv) {
   const shouldUseReactRefresh = true
 
   const getBabelConfig = (outside = false) => {
-    const babelConfig = getBabelBaseConfig(
-      {
-        env: (key) => {
-          switch (key) {
-            case 'development':
-              return isEnvDevelopment
-            case 'production':
-              return isEnvProduction
-            case 'test':
-              return isEnvTest
-            default:
-              return false
-          }
-        },
-      },
-      { isOutside: outside }
-    )
+    const babelConfig = {}
 
     babelConfig.plugins = [
-      ...(babelConfig.plugins || []),
-      ...[
-        [
-          require.resolve('babel-plugin-named-asset-import'),
-          {
-            loaderMap: {
-              svg: {
-                ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]',
-              },
+      [
+        require.resolve('babel-plugin-named-asset-import'),
+        {
+          loaderMap: {
+            svg: {
+              ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]',
             },
           },
-        ],
-        isEnvDevelopment &&
-          shouldUseReactRefresh &&
-          require.resolve('react-refresh/babel'),
-      ].filter(Boolean),
-    ]
+        },
+      ],
+      isEnvDevelopment &&
+        shouldUseReactRefresh &&
+        require.resolve('react-refresh/babel'),
+    ].filter(Boolean)
 
-    babelConfig.babelrc = false
-    babelConfig.configFile = false
+    // babelConfig.babelrc = false
+    // babelConfig.configFile = false
+
     // See #6846 for context on why cacheCompression is disabled
     babelConfig.cacheCompression = false
     // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -143,6 +125,7 @@ module.exports = function (webpackEnv) {
       babelConfig.sourceMaps = shouldUseSourceMap
       babelConfig.inputSourceMap = shouldUseSourceMap
     }
+
     return babelConfig
   }
 
