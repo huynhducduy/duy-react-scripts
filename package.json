@@ -1,6 +1,6 @@
 {
   "name": "duy-react-scripts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Configuration and scripts for duy's react-starter-kit. react-scripts opinionated, customized and optimized",
   "main": "index.js",
   "repository": "git@github.com:huynhducduy/duy-react-scripts.git",
@@ -11,6 +11,12 @@
     "duy-react-scripts": "./bin/index.js"
   },
   "types": "./lib/index.d.ts",
+  "files": [
+    "bin",
+    "config",
+    "lib",
+    "scripts"
+  ],
   "dependencies": {
     "@babel/core": "^7.13.15",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
