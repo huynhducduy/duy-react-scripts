@@ -29,7 +29,7 @@ const safePostCssParser = require('postcss-safe-parser')
 const paths = require('./paths')
 const modules = require('./modules')
 const getClientEnvironment = require('./env')
-const getBabelBaseConfig = require('../babel.config.js')
+const getBabelBaseConfig = require(paths.appBabelConfig)
 
 const appPackageJson = require(paths.appPackageJson)
 
