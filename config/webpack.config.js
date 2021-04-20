@@ -66,10 +66,6 @@ const sassModuleRegex = /\.module\.(scss|sass)$/
 module.exports = function (webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development'
   const isEnvProduction = webpackEnv === 'production'
-  const isEnvTest =
-    webpackEnv === 'test' ||
-    process.env.NODE_ENV === 'test' ||
-    process.env.BABEL_ENV === 'test'
 
   // Variable used for enabling profiling in Production
   // passed into alias object. Uses a flag if passed into the build command
