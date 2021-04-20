@@ -112,6 +112,9 @@ module.exports = function (webpackEnv) {
     if (!outside) {
       babelConfig.compact = isEnvProduction
     } else {
+      babelConfig.babelrc = true
+      babelConfig.configFile = path.resolve(opts.root, "babel-outside.config.js") || false
+
       babelConfig.sourceType = 'unambiguous'
       babelConfig.compact = false
       // Babel sourcemaps are needed for debugging into node_modules
