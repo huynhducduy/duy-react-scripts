@@ -1,6 +1,6 @@
 {
   "name": "duy-react-scripts",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Configuration and scripts for duy's react-starter-kit. react-scripts opinionated, customized and optimized",
   "main": "index.js",
   "repository": "git@github.com:huynhducduy/duy-react-scripts.git",
