@@ -1,6 +1,6 @@
 {
   "name": "duy-react-scripts",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Configuration and scripts for duy's react-starter-kit. react-scripts opinionated, customized and optimized",
   "main": "index.js",
   "repository": "git@github.com:huynhducduy/duy-react-scripts.git",
@@ -66,8 +66,10 @@
     "workbox-webpack-plugin": "^6.1.5"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.13.15",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "postcss": "^8.2.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
