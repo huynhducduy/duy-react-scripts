@@ -31,7 +31,7 @@ const modules = require('./modules')
 const getClientEnvironment = require('./env')
 
 const appPackageJson = require(paths.appPackageJson)
-const babelOutsideConfig = require(paths.babelOutsideConfig)
+const babelOutsideConfig = paths.babelOutsideConfig
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false'
@@ -114,7 +114,7 @@ module.exports = function (webpackEnv) {
       babelConfig.compact = isEnvProduction
     } else {
       babelConfig.babelrc = true
-      babelConfig.configFile = path.resolve(babelOutsideConfig) || false
+      babelConfig.configFile = babelOutsideConfig
 
       babelConfig.sourceType = 'unambiguous'
       babelConfig.compact = false
