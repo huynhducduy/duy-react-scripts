@@ -23,10 +23,13 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const AliasHq = require('alias-hq')
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 
 const paths = require('./paths')
 const modules = require('./modules')
 const getClientEnvironment = require('./env')
+
+const shouldUseVanillaExtract = process.env.ENABLE_VANILLA_EXTRACT === true;
 
 const babelOutsideConfig = paths.babelOutsideConfig
 
@@ -661,6 +664,7 @@ module.exports = function (webpackEnv) {
         cwd: paths.appPath,
         resolvePluginsRelativeTo: __dirname,
       }),
+      shouldUseVanillaExtract && new VanillaExtractPlugin(),
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter

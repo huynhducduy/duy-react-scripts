@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.15.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@svgr/webpack": "^5.5.0",
+    "@vanilla-extract/webpack-plugin": "^1.1.0",
     "alias-hq": "^5.1.6",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
