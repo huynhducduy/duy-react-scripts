@@ -29,7 +29,7 @@ const paths = require('./paths')
 const modules = require('./modules')
 const getClientEnvironment = require('./env')
 
-const shouldUseVanillaExtract = process.env.ENABLE_VANILLA_EXTRACT === true;
+const shouldUseVanillaExtract = process.env.ENABLE_VANILLA_EXTRACT === 'true';
 
 const babelOutsideConfig = paths.babelOutsideConfig
 
